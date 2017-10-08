@@ -1,3 +1,3 @@
 # HeroPress
 
-Telling Stories Of WordPress
+Telling Stories Of WordPress.
