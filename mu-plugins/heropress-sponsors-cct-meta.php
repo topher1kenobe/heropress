@@ -35,6 +35,12 @@ function hp_sponsors_page_meta_boxes( array $meta_boxes ) {
 				'type' => 'text_url',
 			),
 			array(
+				'name' => __( 'No UTM', 'heropress' ),
+				'description' => __( 'Remove HeroPress UTM tags and allow for sponsor tags', 'heropress' ),
+				'id'   => $prefix . 'no_utm',
+				'type' => 'checkbox',
+			),
+			array(
 				'name' => __( 'Align Left', 'heropress' ),
 				'id'   => $prefix . 'align_right',
 				'type' => 'checkbox',
