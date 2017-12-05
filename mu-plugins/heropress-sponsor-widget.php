@@ -67,8 +67,14 @@ class Heropress_Sponsor_Widget extends WP_Widget {
 			<?php $meta = get_post_custom(); ?>
             <?php
 
+				// check to see if we're adding our own UTM
+				$heropress_utm = '';
+				if ( empty( $meta['_heropress_no_utm'][0] ) ) {
+					$heropress_utm = '?utm_source=heropress&utm_medium=heropress-sponsorship&utm_content=' . $current_object->post_name;
+				}
+
                 if ( ! empty( $meta['_heropress_sponsor_url'][0] ) ) {
-					$url_start = '<a href="' . esc_url( $meta['_heropress_sponsor_url'][0] ) . '?utm_source=heropress&utm_medium=heropress-sponsorship&utm_content=' . $current_object->post_name . '">';
+					$url_start = '<a href="' . esc_url( $meta['_heropress_sponsor_url'][0] ) . $heropress_utm . '">';
 					$url_end = '</a>';
                 } else {
 					$url_start = '';
