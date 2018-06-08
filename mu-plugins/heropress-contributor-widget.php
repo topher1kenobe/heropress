@@ -74,6 +74,11 @@ class Heropress_Contributor_Widget extends WP_Widget {
 			<h4><?php the_title(); ?></h5>
 			<ul>
 			<?php
+				if ( isset( $meta['_gmb_address'][0] ) && '' != $meta['_gmb_address'][0] ) {
+			?>
+			<li><a href="https://www.google.com/maps/place/<?php echo urlencode( $meta['_gmb_address'][0] ); ?>/@<?php echo esc_attr( $meta['_gmb_lat'][0] ); ?>,<?php echo esc_attr( $meta['_gmb_lng'][0] ); ?>,5z/"><?php echo esc_html( $meta['_gmb_address'][0] ); ?></a></li>
+			<?php
+				}
 				if ( isset( $meta['_heropress_contributor_url'][0] ) && '' != $meta['_heropress_contributor_url'][0] ) {
 			?>
 			<li><a href="<?php echo esc_url( $meta['_heropress_contributor_url'][0] ); ?>"><?php echo esc_url( $meta['_heropress_contributor_url'][0] ); ?></a></li>
